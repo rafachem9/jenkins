@@ -1,10 +1,12 @@
-# Use the official Python 3.6.5 image
-FROM python:3.6.5-alpine3.7
+FROM python:3.6-alpine3.7
 
-# Set the working directory to /app
-WORKDIR /app
+RUN apk add --no-cache --update \
+    python3 python3-dev gcc \
+    gfortran musl-dev g++ \
+    libffi-dev openssl-dev \
+    libxml2 libxml2-dev \
+    libxslt libxslt-dev \
+    libjpeg-turbo-dev zlib-dev
 
-# Get the 
-COPY requirements.txt /app
-RUN pip3 install --no-cache-dir -r requirements.txt
-
+RUN pip install --upgrade pip
+RUN pip install requests
