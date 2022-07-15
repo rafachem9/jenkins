@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python' } }
+    agent { docker { image 'pythonrafa' } }
     stages {
         stage('build') {
             steps {
