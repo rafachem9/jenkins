@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python run hello.py'
+                sh 'python hello.py'
             }
         }
     }
